@@ -4,8 +4,8 @@
 -export([init/2]).
 
 init(Req0, State) ->
-    Req = cowboy_req:reply(200,
-        #{<<"content-type">> => <<"text/plain">>},
-        <<"Hello Erlang!">>,
-        Req0),
+    Teller = teller:get(), 
+    Headers = [#{<<"content-type">> => <<"text/html">>}],
+    Body = ,
+    Req = cowboy_req:reply(200, Headers, Body, Req0),
     {ok, Req, State}.

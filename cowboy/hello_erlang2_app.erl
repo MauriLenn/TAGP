@@ -6,6 +6,9 @@
 
 % clear TCP listener + secure TLS listener in comment
 % Clients connecting to Cowboy on the clear listener port are expected to use either HTTP/1.1 or HTTP/2
+
+% API
+
 start(_Type, _Args) ->
 	 Dispatch = cowboy_router:compile([
         {'_', [{"/", hello_handler, []}]}
@@ -25,3 +28,6 @@ start(_Type, _Args) ->
 
 stop(_State) ->
 	ok.
+
+
+%% internal functions
